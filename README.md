@@ -22,23 +22,28 @@ El proyecto fue desarrollado utilizando Flutter, incluye lógica para detectar v
 
 ### 1. Autenticación (Inicio de Sesión y Registro)
 Es la pantalla inicial de la aplicación. Los usuarios nuevos pueden crear una cuenta proporcionando sus datos, mientras que los usuarios recurrentes pueden iniciar sesión con sus credenciales validadas a través de Firebase Auth.
-
+<img width="1249" height="911" alt="image" src="https://github.com/user-attachments/assets/d2f8577a-4c74-4bc9-90c5-148816d6200b" />
 
 ### 2. Lobby (Menú Principal)
 Una vez autenticado, el usuario ingresa a esta sala de espera. Desde aquí, los jugadores pueden prepararse para iniciar una nueva partida, buscar oponentes y navegar hacia otras secciones de la aplicación.
+<img width="1248" height="916" alt="image" src="https://github.com/user-attachments/assets/dbe3c445-901e-4f63-8ec2-bae06640d60b" />
+<img width="1242" height="907" alt="image" src="https://github.com/user-attachments/assets/055fecdb-ddc5-432c-978e-6a4b34df2430" />
 
 ### 3. Tablero de Juego (La Partida)
 Es la vista central interactiva donde se desarrolla el juego en una cuadrícula de 3x3. En esta pantalla se indica claramente de quién es el turno actual (Jugador X o Jugador O) junto con el nombre del usuario.
+<img width="1249" height="914" alt="image" src="https://github.com/user-attachments/assets/b3d08fb1-7749-45c4-86b1-a2d910aa3683" />
 
 ### 4. Game Over (Fin del Juego)
 Pantalla que interrumpe la partida cuando un jugador logra alinear tres de sus símbolos o cuando todas las casillas se llenan sin un ganador. Muestra el resultado final y ofrece opciones para continuar o salir.
+<img width="1250" height="920" alt="image" src="https://github.com/user-attachments/assets/242cdab4-d4ab-4c0e-919b-e9b00c46654e" />
 
 ### 5. Rankings
 Una vista dedicada a mostrar los mejores puntajes y estadísticas de los jugadores. Esta pantalla consulta y despliega los datos almacenados en tiempo real desde Cloud Firestore, fomentando la competitividad.
+<img width="1249" height="919" alt="image" src="https://github.com/user-attachments/assets/012489e4-0cc4-48dc-a7be-86e1b638a4d5" />
 
 ---
 
-## 🕹️ Instrucciones del Juego
+## Instrucciones del Juego
 
 El objetivo del juego es ser el primer jugador en conseguir alinear tres de tus símbolos (X o O) en el tablero.
 
