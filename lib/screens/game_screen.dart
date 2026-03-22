@@ -88,45 +88,55 @@ class _GameScreenState extends State<GameScreen> {
     }
   }
 
-  void checkWinner() {
+  void checkWinner() {  
+    if (isGameOver) return;
+
+    bool hayGanador = false;
+    String simboloGanador = "";
+
     List<List<int>> patterns = [
-      [0, 1, 2], [3, 4, 5], [6, 7, 8],
-      [0, 3, 6], [1, 4, 7], [2, 5, 8],
-      [0, 4, 8], [2, 4, 6],
+      [0, 1, 2], [3, 4, 5], [6, 7, 8], 
+      [0, 3, 6], [1, 4, 7], [2, 5, 8], 
+      [0, 4, 8], [2, 4, 6],           
     ];
 
     for (var p in patterns) {
       if (board[p[0]] != "" &&
           board[p[0]] == board[p[1]] &&
           board[p[1]] == board[p[2]]) {
-        winner = board[p[0]]; 
-        isGameOver = true;
+        hayGanador = true;
+        simboloGanador = board[p[0]]; 
+        break; 
       }
     }
 
-    if (!board.contains("") && winner == "") {
+
+    if (hayGanador) {
+      winner = simboloGanador;
+      isGameOver = true;
+    } else if (!board.contains("")) {
       winner = "Empate";
       isGameOver = true;
     }
 
+
     if (isGameOver) {
       String winnerName = "";
+      
       if (winner == "Empate") {
-        winnerName = "Empate";
+        winnerName = "Empate"; 
       } else if (winner == "X") {
         winnerName = player1Name;
       } else if (winner == "O") {
         winnerName = player2Name;
       }
 
-      if (winner == mySymbol) {
+      if (winner == mySymbol && winner != "Empate") {
         final user = FirebaseAuth.instance.currentUser;
         FirebaseFirestore.instance
             .collection('users')
             .doc(user!.uid)
-            .update({
-          'wins': FieldValue.increment(1), 
-        });
+            .update({'wins': FieldValue.increment(1)});
       }
 
       Future.delayed(Duration(milliseconds: 800), () {
@@ -134,8 +144,8 @@ class _GameScreenState extends State<GameScreen> {
           context,
           MaterialPageRoute(
             builder: (_) => ResultScreen(
-              winner: winnerName, 
-              username: myName, 
+              winner: winnerName,
+              username: myName,
             ),
           ),
         );
