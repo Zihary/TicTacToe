@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "212046938458",
+    "project_id": "tictactoe-unison",
+    "storage_bucket": "tictactoe-unison.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212046938458:android:c2435d061e102ad863b363",
+        "android_client_info": {
+          "package_name": "com.example.tictactoe_unison"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsLFtkVgaTxmuxcLMYYxNwv7sfJ2PYQHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
